@@ -1,3 +1,9 @@
+html,
+body { height: 100%; }
+
 .App {
-    background-color: grey;
+    display: flex;
+    background-color: #220021;
+    flex-direction: column;
+    height: 100%;
 }

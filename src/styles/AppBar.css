@@ -1,16 +1,32 @@
+body { margin: 0; }
+
 .AppBar {
     display: flex;
     background-color: #ffc800;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 10px 20px #514500;
 }
 
-.Title {
+.AppBar a {
+    float: left;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    line-height: 25px;
+}
+
+.AppBar a.Title {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 50%;
     font-family: Pristina, serif;
-    font-size: 24px;
+    font-size: 26px;
     font-style: italic;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px grey;
 }
 
 .Menu {
@@ -18,16 +34,31 @@
     align-items: center;
     justify-content: center;
     flex: 50%;
+    float: right;
+    overflow: hidden;
 }
 
-.FAQ {
-    padding-right: 5px;
+.AppBar a.Column {
+    padding-left: 10px;
+    padding-right: 10px;
     font-style: italic;
-
+    text-shadow: 1px 1px 5px grey;
+    height: 75%;
 }
 
-.Lang {
-    padding-left: 5px;
-    font-style: italic;
+.AppBar a.Column:hover {
+    background-color: #ffab00;
+    color: black;
 }
 
+@media screen and (max-width: 500px) {
+    .AppBar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .Menu {
+        float: none;
+    }
+}
