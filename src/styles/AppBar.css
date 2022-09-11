@@ -1,0 +1,33 @@
+.AppBar {
+    display: flex;
+    background-color: #ffc800;
+}
+
+.Title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 50%;
+    font-family: Pristina, serif;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.Menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 50%;
+}
+
+.FAQ {
+    padding-right: 5px;
+    font-style: italic;
+
+}
+
+.Lang {
+    padding-left: 5px;
+    font-style: italic;
+}
+
