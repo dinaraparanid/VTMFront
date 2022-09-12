@@ -13,13 +13,16 @@
     border: none;
     outline: none;
     margin: 0;
-    align-self: center;
-    text-align: center;
     background-color: inherit;
-    font-size: 16px;
+    font-size: 30px;
+    font-family: Pristina, serif;
     text-shadow: 1px 1px 5px grey;
-    font-style: inherit;
+    font-style: italic;
+    letter-spacing: 1px;
     height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .DropdownContent {
