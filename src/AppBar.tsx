@@ -1,31 +1,45 @@
 import React from 'react';
-import './styles/AppBar.css'
-import './styles/Lang.css'
-import {Localisation, toLanguage} from "./utils/Localisation";
 
-const Title = () => (<a href='home' className="Title"><h2>Video To Music Converter</h2></a>)
+import './styles/common/AppBar.css'
+import './styles/pristina/AppBar.css'
+import './styles/serif/AppBar.css'
 
-const Menu = ({languages}: {languages: Array<String>}) => (
-    <div className='Menu'>
-        <a href='home' className='Column'>Home</a>
-        <a href='faq' className='Column'>FAQ</a>
-        <div className='Dropdown'>
-            <button className='LangButton'>Language</button>
-            <div className='DropdownContent'>
-                { languages.map((lang, index) => (<button
-                    onClick={ () => Localisation.getInstance().setLang(toLanguage(index)) }
-                    style={{color: '#ffab00'}}>{lang}</button>)) }
+import './styles/common/Lang.css'
+import './styles/pristina/Lang.css'
+import './styles/serif/Lang.css'
+
+import {Language, Localisation} from './utils/Localisation';
+
+const Title = () => (<a href='home' className='title'><h2>Video To Music Converter</h2></a>)
+
+function Menu({languages, lang, setLang}: {languages: Array<String>, lang: Language, setLang: (language: Language) => void}) {
+    const [column, langButton] = lang === Language.RUSSIAN ?
+        ['column-serif', 'lang-button-serif'] :
+        ['column-pristina', 'lang-button-pristina'];
+
+    return (
+        <div className='menu'>
+            <a href='home' className={column}>{Localisation.Home(lang)}</a>
+            <a href='faq' className={column}>{Localisation.FAQ(lang)}</a>
+            <div className='dropdown'>
+                <button className={langButton}>{Localisation.Language(lang)}</button>
+                <div className='dropdown-content'>
+                    { languages.map((lang, index) => (<button
+                        key={index}
+                        onClick={ () => setLang(Localisation.toLanguage(index)) }
+                        style={{color: '#ffab00'}}>{lang}</button>)) }
+                </div>
             </div>
+            <a href='about' className={column}>{Localisation.AboutApp(lang)}</a>
         </div>
-        <a href='about' className='Column'>About App</a>
-    </div>
-)
+    )
+}
 
-const AppBar = () => (
-    <div className='AppBar'>
-        <Title/>
-        <Menu languages={['Русский', 'English']}/>
-    </div>
-)
-
-export default AppBar;
+export default function AppBar({lang, setLang}: {lang: Language, setLang: (language: Language) => void}) {
+    return (
+        <div className='app-bar'>
+            <Title/>
+            <Menu languages={['Русский', 'English']} lang={lang} setLang={setLang}/>
+        </div>
+    )
+}

@@ -1,0 +1,17 @@
+.dropdown .lang-button-pristina {
+    border: none;
+    outline: none;
+    margin: 0;
+    background-color: inherit;
+    font-size: 30px;
+    font-family: Pristina, serif;
+    text-shadow: 1px 1px 5px #4a0071;
+    font-style: italic;
+    letter-spacing: 1px;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown:hover .lang-button-pristina { background-color: #ffab00 }

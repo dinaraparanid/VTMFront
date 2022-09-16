@@ -1,19 +1,28 @@
 import React from "react";
-import './styles/Description.css'
 
-export default function Description() {
+import './styles/common/Description.css'
+import './styles/pristina/Description.css'
+import './styles/serif/Description.css'
+
+import {Language, Localisation} from "./utils/Localisation";
+
+export default function Description({lang}: {lang: Language}) {
+    const howToUseIt = lang === Language.RUSSIAN ? 'how-to-use-it-serif' : 'how-to-use-it-pristina';
+    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina';
+    const supportedSites = lang === Language.RUSSIAN ? 'supported-sites-serif' : 'supported-sites-pristina';
+
     return (
-        <div className='Description'>
-            <div className='Header'>How To Use It?</div>
+        <div className='description'>
+            <div className={howToUseIt}>{Localisation.HowToUseIt(lang)}</div>
             {[
-                '1. Copy the URL link to the video',
-                '2. Paste the copied link into the input field',
-                '3. Click on "Download" and wait for the video to be processed and finished converting',
-                '4. Enjoy the resulting track!'
+                Localisation.CopyTheUrlLinkToTheVideo(lang),
+                Localisation.PasteTheCopiedLinkIntoTheInputField(lang),
+                Localisation.ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting(lang),
+                Localisation.EnjoyTheResultingTrack(lang)
             ].map((text, ind) =>
-                ind === 3 ? (<p className='Text'>{text}</p>) : (<><p className='Text'>{text}</p><p></p></>)
+                ind === 3 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
             )}
-            <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className='Header'><p>Supported Sites</p></a>
+            <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
         </div>
     )
 }

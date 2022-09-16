@@ -1,29 +1,35 @@
 import React, {useState} from "react";
-import './styles/Converter.css'
+
+import './styles/common/Converter.css'
+import './styles/pristina/Converter.css'
+import './styles/serif/Converter.css'
+
+import {Language, Localisation} from "./utils/Localisation";
 
 enum OutputFormat { MP3 = 'MP3', MP4 = 'MP4', WAV = 'WAV', AAC = 'AAC' }
 
-export default function Converter() {
+export default function Converter({lang}: {lang: Language}) {
     const outputFormat = useState(OutputFormat.MP3)
+    const pasteUrl = lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-pristina';
 
     return (
-        <div className='Converter'>
-            <p className='PasteUrl'>Paste URL link here</p>
-            <div className='Row'>
-                <input className='Input' type='text' placeholder='Your URL link'/>
+        <div className='converter'>
+            <p className={pasteUrl}>{Localisation.PasteUrlLinkHere(lang)}</p>
+            <div className='row'>
+                <input className='input' type='text' placeholder={Localisation.YourUrlLinkVideo(lang)}/>
                 <button
-                    className='DownloadButton'
+                    className='download-button'
                     onClick={() => console.log('TODO: Started downloading') }
-                >Download</button>
+                >{Localisation.Download(lang)}</button>
             </div>
-            <div className='Formats'>
+            <div className='formats'>
                 <button
-                    className='MP3Format'
+                    className='mp3-format'
                     onClick={() => outputFormat[0] = OutputFormat.MP3}
                 >MP3</button> {
                 [OutputFormat.MP4, OutputFormat.WAV, OutputFormat.AAC].map(format =>
                     (<button
-                        className='Format'
+                        className='format'
                         onClick={() => outputFormat[0] = format}
                     >{format}</button>))
             }</div>

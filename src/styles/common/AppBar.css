@@ -1,6 +1,6 @@
 body { margin: 0; }
 
-.AppBar {
+.app-bar {
     display: flex;
     background-color: #ffc800;
     overflow: hidden;
@@ -10,7 +10,7 @@ body { margin: 0; }
     box-shadow: 0 10px 20px #514500;
 }
 
-.AppBar a {
+.app-bar a {
     float: left;
     color: black;
     text-align: center;
@@ -18,7 +18,7 @@ body { margin: 0; }
     line-height: 25px;
 }
 
-.AppBar a.Title {
+.app-bar a.title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,33 +28,15 @@ body { margin: 0; }
     font-size: 26px;
     font-style: italic;
     font-weight: bold;
-    text-shadow: 1px 1px 5px grey;
+    text-shadow: 1px 1px 5px #4a0071;
     letter-spacing: 1px;
 }
 
-.Menu {
+.menu {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 50%;
     float: right;
     overflow: hidden;
-}
-
-.AppBar a.Column {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-style: italic;
-    text-shadow: 1px 1px 5px grey;
-    font-size: 30px;
-    font-family: Pristina, serif;
-    height: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.AppBar a.Column:hover {
-    background-color: #ffab00;
-    color: black;
 }
