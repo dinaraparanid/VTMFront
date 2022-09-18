@@ -9,7 +9,7 @@ import {Language, Localisation} from "./utils/Localisation";
 enum OutputFormat { MP3 = 'MP3', MP4 = 'MP4', WAV = 'WAV', AAC = 'AAC' }
 
 export default function Converter({lang}: {lang: Language}) {
-    const outputFormat = useState(OutputFormat.MP3)
+    const [outputFormat, setOutputFormat] = useState(OutputFormat.MP3)
     const pasteUrl = lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-pristina';
 
     return (
@@ -19,18 +19,18 @@ export default function Converter({lang}: {lang: Language}) {
                 <input className='input' type='text' placeholder={Localisation.YourUrlLinkVideo(lang)}/>
                 <button
                     className='download-button'
-                    onClick={() => console.log('TODO: Started downloading') }
+                    onClick={() => console.log('TODO: Start downloading') }
                 >{Localisation.Download(lang)}</button>
             </div>
             <div className='formats'>
                 <button
                     className='mp3-format'
-                    onClick={() => outputFormat[0] = OutputFormat.MP3}
+                    onClick={() => setOutputFormat(OutputFormat.MP3)}
                 >MP3</button> {
                 [OutputFormat.MP4, OutputFormat.WAV, OutputFormat.AAC].map(format =>
                     (<button
                         className='format'
-                        onClick={() => outputFormat[0] = format}
+                        onClick={() => setOutputFormat(format)}
                     >{format}</button>))
             }</div>
         </div>

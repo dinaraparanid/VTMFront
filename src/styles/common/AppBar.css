@@ -2,7 +2,7 @@ body { margin: 0; }
 
 .app-bar {
     display: flex;
-    background-color: #ffc800;
+    background-color: #700071;
     overflow: hidden;
     min-height: 75px;
     border-bottom-left-radius: 20px;
