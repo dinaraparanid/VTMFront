@@ -1,14 +1,16 @@
 import React, {useState} from "react";
 
-import './styles/common/Converter.css'
-import './styles/pristina/Converter.css'
-import './styles/serif/Converter.css'
+import '../styles/common/Converter.css'
+import '../styles/pristina/Converter.css'
+import '../styles/serif/Converter.css'
 
-import {Language, Localisation} from "./utils/Localisation";
+import {Language, Localisation} from "../utils/lang/Localisation";
+import {useLang} from "../utils/lang/LangProvider";
 
 enum OutputFormat { MP3 = 'MP3', MP4 = 'MP4', WAV = 'WAV', AAC = 'AAC' }
 
-export default function Converter({lang}: {lang: Language}) {
+export default function Converter() {
+    const { lang } = useLang()
     const [outputFormat, setOutputFormat] = useState(OutputFormat.MP3)
     const pasteUrl = lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-pristina';
 

@@ -2,7 +2,7 @@ body { margin: 0; }
 
 .app-bar {
     display: flex;
-    background-color: #700071;
+    background-color: #ffc800;
     overflow: hidden;
     min-height: 75px;
     border-bottom-left-radius: 20px;
@@ -10,26 +10,24 @@ body { margin: 0; }
     box-shadow: 0 10px 20px #514500;
 }
 
-.app-bar a {
-    float: left;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    line-height: 25px;
-}
-
-.app-bar a.title {
+.app-bar button.title {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 50%;
-    padding-top: 5px;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: Pristina, serif;
-    font-size: 26px;
+    font-size: 36px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #4a0071;
     letter-spacing: 1px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    height: 75%;
 }
 
 .menu {

@@ -1,17 +1,19 @@
-.app-bar a.column-pristina {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-style: italic;
-    text-shadow: 1px 1px 5px #4a0071;
+.screen-button-pristina {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: inherit;
     font-size: 30px;
     font-family: Pristina, serif;
+    text-shadow: 1px 1px 5px #4a0071;
+    font-style: italic;
+    letter-spacing: 1px;
     height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.app-bar a.column-pristina:hover {
-    background-color: #ffab00;
-    color: black;
-}
+.screen-button-pristina:hover { background-color: #ffab00 }

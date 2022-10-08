@@ -1,12 +1,14 @@
 import React from "react";
 
-import './styles/common/Description.css'
-import './styles/pristina/Description.css'
-import './styles/serif/Description.css'
+import '../styles/common/Description.css'
+import '../styles/pristina/Description.css'
+import '../styles/serif/Description.css'
 
-import {Language, Localisation} from "./utils/Localisation";
+import {Language, Localisation} from "../utils/lang/Localisation";
+import {useLang} from "../utils/lang/LangProvider";
 
-export default function Description({lang}: {lang: Language}) {
+export default function Description() {
+    const { lang } = useLang()
     const howToUseIt = lang === Language.RUSSIAN ? 'how-to-use-it-serif' : 'how-to-use-it-pristina';
     const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina';
     const supportedSites = lang === Language.RUSSIAN ? 'supported-sites-serif' : 'supported-sites-pristina';

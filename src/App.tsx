@@ -1,18 +1,28 @@
-import React, {useState} from 'react';
+import React from 'react';
 import AppBar from "./AppBar";
-import Converter from "./Converter";
-import Description from "./Description";
 import './styles/common/App.css'
-import {Language} from "./utils/Localisation";
+import {useCurrentScreen} from "./utils/current_screen/CurrentScreenProvider";
+import HomeScreen from "./home_screen/HomeScreen";
+import {FAQScreen} from "./faq_screen/FAQScreen";
+import {AboutAppScreen} from "./about_app_screen/AboutAppScreen";
+import {Screen} from "./utils/current_screen/Screen";
+
+function CurrentScreen(currentScreen: Screen) {
+    switch (currentScreen) {
+        case Screen.HOME: return (<HomeScreen/>)
+        case Screen.FAQ: return (<FAQScreen/>)
+        case Screen.ABOUT_APP: return (<AboutAppScreen/>)
+        default: throw Error('Unknown screen state')
+    }
+}
 
 export default function App() {
-    const [lang, setLang] = useState(Language.ENGLISH)
+    const { currentScreen } = useCurrentScreen()
 
     return (
         <div className='App'>
-            <AppBar lang={lang} setLang={setLang}/>
-            <Converter lang={lang}/>
-            <Description lang={lang}/>
+            <AppBar/>
+            { CurrentScreen(currentScreen) }
         </div>
     )
 }

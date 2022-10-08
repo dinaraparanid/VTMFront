@@ -1,7 +1,7 @@
 export enum Language { RUSSIAN, ENGLISH }
 
 export class Localisation {
-    public static toLanguage(index: number) {
+    public static toLanguage(index: number): Language {
         switch (index) {
             case 0:
                 return Language.RUSSIAN
@@ -15,7 +15,6 @@ export class Localisation {
     public static HowToUseIt(lang: Language) {
         return lang === Language.RUSSIAN ? 'Как Этим Пользоваться?' : 'How To Use It'
     }
-
 
     public static CopyTheUrlLinkToTheVideo(lang: Language) {
         return lang === Language.RUSSIAN ?

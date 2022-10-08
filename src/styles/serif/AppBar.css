@@ -1,17 +1,17 @@
-.app-bar a.column-serif {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-style: italic;
-    text-shadow: 1px 1px 5px #4a0071;
+.screen-button-serif {
+    border: none;
+    outline: none;
+    margin: 0;
+    background-color: inherit;
     font-size: 20px;
     font-family: serif;
+    text-shadow: 1px 1px 5px #4a0071;
+    font-style: italic;
+    letter-spacing: 1px;
     height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.app-bar a.column-serif:hover {
-    background-color: #ffab00;
-    color: black;
-}
+.screen-button-serif:hover { background-color: #ffab00 }
