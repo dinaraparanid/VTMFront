@@ -1,0 +1,28 @@
+.about-app .about-app-data-serif {
+    background-color: #4a0071;
+    font-family: serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #ffab00;
+    text-align: center;
+    text-decoration: none;
+    color: #ffc800;
+    letter-spacing: 1px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.text-serif {
+    font-family: serif;
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

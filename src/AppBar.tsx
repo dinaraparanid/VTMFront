@@ -4,9 +4,9 @@ import './styles/common/AppBar.css'
 import './styles/pristina/AppBar.css'
 import './styles/serif/AppBar.css'
 
-import './styles/common/Lang.css'
-import './styles/pristina/Lang.css'
-import './styles/serif/Lang.css'
+import './styles/common/home_screen/Lang.css'
+import './styles/pristina/home_screen/Lang.css'
+import './styles/serif/home_screen/Lang.css'
 
 import {Language, Localisation} from './utils/lang/Localisation';
 import {useLang} from "./utils/lang/LangProvider";

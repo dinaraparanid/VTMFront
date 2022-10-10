@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-import '../styles/common/Converter.css'
-import '../styles/pristina/Converter.css'
-import '../styles/serif/Converter.css'
+import '../styles/common/home_screen/Converter.css'
+import '../styles/pristina/home_screen/Converter.css'
+import '../styles/serif/home_screen/Converter.css'
 
 import {Language, Localisation} from "../utils/lang/Localisation";
 import {useLang} from "../utils/lang/LangProvider";

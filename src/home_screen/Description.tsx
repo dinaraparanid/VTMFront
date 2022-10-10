@@ -1,8 +1,8 @@
 import React from "react";
 
-import '../styles/common/Description.css'
-import '../styles/pristina/Description.css'
-import '../styles/serif/Description.css'
+import '../styles/common/home_screen/Description.css'
+import '../styles/pristina/home_screen/Description.css'
+import '../styles/serif/home_screen/Description.css'
 
 import {Language, Localisation} from "../utils/lang/Localisation";
 import {useLang} from "../utils/lang/LangProvider";

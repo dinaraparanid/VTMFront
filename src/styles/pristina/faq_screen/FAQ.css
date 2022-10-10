@@ -1,0 +1,26 @@
+.faq .faq-data-pristina {
+    background-color: #4a0071;
+    font-family: Pristina, serif;
+    font-size: 45px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #ffab00;
+    text-align: center;
+    text-decoration: none;
+    color: #ffc800;
+    letter-spacing: 1px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.text-pristina {
+    font-family: Pristina, serif;
+    font-size: 28px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    letter-spacing: 1px;
+    margin-left: 40px;
+}
