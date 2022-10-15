@@ -9,9 +9,9 @@ import {useLang} from "../utils/lang/LangProvider";
 
 export default function Description() {
     const { lang } = useLang()
-    const howToUseIt = lang === Language.RUSSIAN ? 'how-to-use-it-serif' : 'how-to-use-it-pristina';
-    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina';
-    const supportedSites = lang === Language.RUSSIAN ? 'supported-sites-serif' : 'supported-sites-pristina';
+    const howToUseIt = lang === Language.RUSSIAN ? 'how-to-use-it-serif' : 'how-to-use-it-pristina'
+    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina'
+    const supportedSites = lang === Language.RUSSIAN ? 'supported-sites-serif' : 'supported-sites-pristina'
 
     return (
         <div className='description'>

@@ -22,12 +22,12 @@ function Title() {
 }
 
 function Menu() {
-    const { lang, setLanguage } = useLang();
+    const { lang, setLanguage } = useLang()
     const { setCurrentScreen } = useCurrentScreen()
-    const languages = ['Русский', 'English'];
+    const languages = ['Русский', 'English']
     const [screenButton, langButton] = lang === Language.RUSSIAN ?
         ['screen-button-serif', 'lang-button-serif'] :
-        ['screen-button-pristina', 'lang-button-pristina'];
+        ['screen-button-pristina', 'lang-button-pristina']
 
     return (
         <div className='menu'>

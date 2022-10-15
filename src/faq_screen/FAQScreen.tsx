@@ -7,9 +7,9 @@ import '../styles/pristina/faq_screen/FAQ.css'
 import '../styles/serif/faq_screen/FAQ.css'
 
 export function FAQScreen() {
-    const { lang } = useLang();
-    const faqData = lang === Language.RUSSIAN ? 'faq-data-serif' : 'faq-data-pristina';
-    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina';
+    const { lang } = useLang()
+    const faqData = lang === Language.RUSSIAN ? 'faq-data-serif' : 'faq-data-pristina'
+    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina'
 
     return (<div className='faq'>
             <div className={faqData}>{Localisation.FAQ(lang)}</div>
