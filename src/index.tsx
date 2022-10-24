@@ -4,8 +4,6 @@ import App from './App';
 import CurrentScreenProvider from "./utils/current_screen/CurrentScreenProvider";
 import LangProvider from "./utils/lang/LangProvider";
 
-
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -8,7 +8,16 @@ import {Language, Localisation} from "../utils/lang/Localisation";
 import {useLang} from "../utils/lang/LangProvider";
 import {downloadFile} from "../api_client/Client";
 
-enum OutputFormat { MP3 = 'MP3', MP4 = 'MP4', WAV = 'WAV', AAC = 'AAC' }
+enum OutputFormat {
+    MP3 = 'MP3',
+    MP4 = 'MP4',
+    WAV = 'WAV',
+    AAC = 'AAC',
+    FLAC = 'FLAC',
+    M4A = 'M4A',
+    OPUS = 'OPUS',
+    VORBIS = 'VORBIS'
+}
 
 export default function Converter() {
     const { lang } = useLang()
@@ -29,10 +38,10 @@ export default function Converter() {
                 <button
                     className='download-button'
                     onClick={ () => downloadFile(url, outputFormat.toLowerCase())
-                        .then(
+                        ?.then(
                             resp => {
                                 alert(`RESPONSE: ${resp.data}`)
-                                setUrl(resp.statusText)
+                                setUrl("")
                             },
                             reason => alert(reason)
                         )
@@ -45,7 +54,15 @@ export default function Converter() {
                     className='mp3-format'
                     onClick={() => setOutputFormat(OutputFormat.MP3)}
                 >MP3</button> {
-                [OutputFormat.MP4, OutputFormat.WAV, OutputFormat.AAC].map(format =>
+                [
+                    OutputFormat.MP4,
+                    OutputFormat.WAV,
+                    OutputFormat.AAC,
+                    OutputFormat.FLAC,
+                    OutputFormat.M4A,
+                    OutputFormat.OPUS,
+                    OutputFormat.VORBIS
+                ].map(format =>
                     (<button
                         className='format'
                         onClick={() => setOutputFormat(format)}
