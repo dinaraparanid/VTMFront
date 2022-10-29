@@ -2,7 +2,7 @@ import React, {createContext, ReactElement, useContext, useState} from "react";
 import {Language, Localisation} from "./Localisation";
 
 const LangContext = createContext<{ lang: Language; setLanguage: (index: number) => void; }>({
-    lang: Language.ENGLISH, setLanguage(index) {}
+    lang: Language.ENGLISH, setLanguage() {}
 })
 
 export const useLang = () => useContext(LangContext)

@@ -2,7 +2,7 @@ import React, {createContext, ReactElement, useContext, useState} from "react";
 import {Screen} from "./Screen";
 
 const CurrentScreenContext = createContext<{ currentScreen: Screen, setCurrentScreen: (screen: Screen) => void }>({
-    currentScreen: Screen.HOME, setCurrentScreen(screen) {}
+    currentScreen: Screen.HOME, setCurrentScreen() {}
 })
 
 export const useCurrentScreen = () => useContext(CurrentScreenContext)
