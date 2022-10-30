@@ -6,6 +6,7 @@ import HomeScreen from "./home_screen/HomeScreen";
 import {FAQScreen} from "./faq_screen/FAQScreen";
 import {AboutAppScreen} from "./about_app_screen/AboutAppScreen";
 import {Screen} from "./utils/current_screen/Screen";
+import VideoInfProvider from "./utils/data/VideoInfoProvider";
 
 function CurrentScreen(currentScreen: Screen) {
     switch (currentScreen) {
@@ -22,7 +23,9 @@ export default function App() {
     return (
         <div className='App'>
             <AppBar/>
-            { CurrentScreen(currentScreen) }
+            <VideoInfProvider>
+                { CurrentScreen(currentScreen) }
+            </VideoInfProvider>
         </div>
     )
 }

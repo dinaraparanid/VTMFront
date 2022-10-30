@@ -3,7 +3,6 @@
     margin-top: 75px;
     margin-right: 250px;
     margin-left: 250px;
-    height: 200px;
     border-radius: 10px;
     box-shadow: 0 10px 45px #514500;
 }
@@ -18,11 +17,9 @@
 
 .converter .row {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex: 50%;
     margin-left: 20px;
-    width: 98%;
+    width: 100%;
 }
 
 .converter .input {
@@ -35,26 +32,49 @@
     border-radius: 5px;
     border-color: #5e009c;
     height: 40px;
-    width: 100%;
+    width: 85%;
     box-shadow: 0 5px 2px #2c0035;
 }
 
-.converter .converter-button {
+.converter .button-column {
+    width: 115px;
+    margin-left: 20px;
+}
+
+.converter .download-button {
     background-color: #220021;
     color: #ffc800;
-    padding: 10px;
+    width: 100%;
+    padding: 10px 0;
     font-style: italic;
     text-shadow: 1px 1px 5px grey;
     font-size: 18px;
     border-style: double;
     border-radius: 5px;
     border-color: #5e009c;
-    margin-right: 10px;
-    margin-left: 10px;
+    box-shadow: 0 5px 2px #2c0035;
+}
+
+.converter .next-button {
+    background-color: #220021;
+    color: #ffc800;
+    width: 100%;
+    padding: 10px 0;
+    font-style: italic;
+    text-shadow: 1px 1px 5px grey;
+    font-size: 18px;
+    border-style: double;
+    border-radius: 5px;
+    border-color: #5e009c;
+    margin-top: 10px;
     box-shadow: 0 5px 2px #2c0035;
 }
 
 .converter .download-button:hover {
+    background-color: #2c0035;
+}
+
+.converter .next-button:hover {
     background-color: #2c0035;
 }
 

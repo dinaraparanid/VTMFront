@@ -1,15 +1,15 @@
 import React from "react";
 import Converter from "./Converter";
 import Description from "./Description";
-import VideoInfProvider from "../utils/data/VideoInfoProvider";
+import {useVideoInfo} from "../utils/data/VideoInfoProvider";
 
 export default function HomeScreen() {
+    const { videoInfo } = useVideoInfo()
+
     return (
         <div>
-            <VideoInfProvider>
-                <Converter/>
-            </VideoInfProvider>
-            <Description/>
+            <Converter/>
+            { videoInfo === null ? <Description/> : <div/> }
         </div>
     )
 }

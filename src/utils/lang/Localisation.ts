@@ -62,9 +62,12 @@ export class Localisation {
     public static Start = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Старт' : 'Start'
 
-    public static ConvertNext = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Далее' : 'Convert Next'
+    public static Next = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Далее' : 'Next'
 
     public static Cover = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Обложка' : 'Cover'
+
+    public static Duration = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Продолжительность' : 'Duration'
 }

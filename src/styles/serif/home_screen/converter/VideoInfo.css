@@ -1,0 +1,19 @@
+.video-info .video-title-serif {
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.video-info .duration-serif {
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: serif;
+    letter-spacing: 1px;
+    text-align: center;
+}

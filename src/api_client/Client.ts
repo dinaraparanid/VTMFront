@@ -1,4 +1,5 @@
 import axios from "axios";
+import {VideoInfo} from "../utils/data/VideoInfo";
 
 const API_URL = 'http://0.0.0.0:1337'
 
@@ -8,7 +9,7 @@ export function getVideoData(url: string) {
         return null;
     }
 
-    return axios.get(`${API_URL}/get_video?url=${url}`)
+    return axios.get<VideoInfo>(`${API_URL}/get_video?url=${url}`)
 }
 
 export function downloadFile(url: string, extension: string) {
