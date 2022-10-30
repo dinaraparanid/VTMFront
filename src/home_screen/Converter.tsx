@@ -48,7 +48,7 @@ export default function Converter() {
                         className='download-button'
                         onClick={ () => {
                             if (videoInfo !== null) {
-                                downloadFile(urlRef.current, outputFormat.toLowerCase())
+                                downloadFile(urlRef.current, videoInfo._filename, outputFormat.toLowerCase())
                             } else {
                                 console.log(urlRef.current)
                                 getVideoData(urlRef.current)
