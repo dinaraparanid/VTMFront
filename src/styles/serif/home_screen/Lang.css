@@ -1,4 +1,15 @@
-.dropdown .lang-button-serif {
+.dropdown-serif {
+    background-color: #ffc800;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: italic;
+}
+
+.dropdown-serif .lang-button-serif {
     border: none;
     outline: none;
     margin: 0;
@@ -14,4 +25,9 @@
     align-items: center;
 }
 
-.dropdown:hover .lang-button-serif { background-color: #ffab00 }
+.dropdown-serif:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-serif:hover .lang-button-serif { background-color: #ffab00 }
+.dropdown-serif:hover .dropdown-content { display: block; }

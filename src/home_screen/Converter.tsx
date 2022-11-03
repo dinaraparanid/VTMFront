@@ -24,13 +24,13 @@ export default function Converter() {
     const { lang } = useLang()
     const {videoInfo, setVideoInfo} = useVideoInfo()
     const [outputFormat, setOutputFormat] = useState(OutputFormat.MP3)
-
     const inputRef = useRef<HTMLInputElement>(null)
     const urlRef = useRef('')
 
     const pasteUrl = lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-pristina';
-    const buttonTxt = videoInfo === null ? Localisation.Start(lang) : Localisation.Download(lang)
-    const converterHeight = videoInfo === null ? 200 : lang === Language.RUSSIAN ? 650 : 745
+    const [buttonTxt, converterHeight] = videoInfo === null ?
+        [Localisation.Start(lang), 200] :
+        [Localisation.Download(lang), lang === Language.RUSSIAN ? 650 : 745]
 
     return (
         <div className='converter' style={{height: converterHeight}}>
@@ -60,7 +60,7 @@ export default function Converter() {
                             }
                         }}
                     >{buttonTxt}</button>
-                    { videoInfo === null ? <div/> :
+                    { videoInfo === null ? <></> :
                         <button
                             className='next-button'
                             onClick={ () => { inputRef.current!.value = ''; setVideoInfo(null) }}
@@ -69,7 +69,7 @@ export default function Converter() {
                 </div>
             </div>
             {
-                videoInfo === null ? <div/> : <VideoInfo
+                videoInfo === null ? <></> : <VideoInfo
                     title={videoInfo!.title}
                     duration={videoInfo!.duration}
                     description={videoInfo!.description}

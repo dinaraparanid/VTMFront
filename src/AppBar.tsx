@@ -10,57 +10,46 @@ import './styles/serif/home_screen/Lang.css'
 
 import {Language, Localisation} from './utils/lang/Localisation';
 import {useLang} from "./utils/lang/LangProvider";
-import {useCurrentScreen} from "./utils/current_screen/CurrentScreenProvider";
-import {Screen} from "./utils/current_screen/Screen";
-
-function Title() {
-    const { setCurrentScreen } = useCurrentScreen()
-    return (<button
-            onClick={() => setCurrentScreen(Screen.HOME)}
-            className='title'>Video To Music Converter</button>
-    )
-}
+import {Link} from "react-router-dom";
 
 function Menu() {
     const { lang, setLanguage } = useLang()
-    const { setCurrentScreen } = useCurrentScreen()
     const languages = ['Русский', 'English']
-    const [screenButton, langButton] = lang === Language.RUSSIAN ?
-        ['screen-button-serif', 'lang-button-serif'] :
-        ['screen-button-pristina', 'lang-button-pristina']
+    const [screenButton, langButton, dropdown] = lang === Language.RUSSIAN ?
+        ['screen-button-serif', 'lang-button-serif', 'dropdown-serif'] :
+        ['screen-button-pristina', 'lang-button-pristina', 'dropdown-pristina']
+
+    const Home = () => <Link to="/" className={screenButton}>{Localisation.Home(lang)}</Link>
+    const FAQ = () => <Link to="faq" className={screenButton}>{Localisation.FAQ(lang)}</Link>
+    const AboutApp = () => <Link to="about_app" className={screenButton}>{Localisation.AboutApp(lang)}</Link>
+
+    const LangMenu = () => <div className={dropdown}>
+        <button className={langButton}>{Localisation.Language(lang)}</button>
+        <div className='dropdown-content'>
+            { languages.map((lang, index) => (<button
+                key={index}
+                onClick={ () => setLanguage(Localisation.toLanguage(index)) }
+                style={{color: '#ffab00'}}>{lang}</button>)) }
+        </div>
+    </div>
 
     return (
-        <div className='menu'>
-            <button
-                onClick={() => setCurrentScreen(Screen.HOME)}
-                className={screenButton}>{Localisation.Home(lang)}
-            </button>
-            <button
-                onClick={() => setCurrentScreen(Screen.FAQ)}
-                className={screenButton}>{Localisation.FAQ(lang)}
-            </button>
-            <div className='dropdown'>
-                <button className={langButton}>{Localisation.Language(lang)}</button>
-                <div className='dropdown-content'>
-                    { languages.map((lang, index) => (<button
-                        key={index}
-                        onClick={ () => setLanguage(Localisation.toLanguage(index)) }
-                        style={{color: '#ffab00'}}>{lang}</button>)) }
-                </div>
-            </div>
-            <button
-                onClick={() => setCurrentScreen(Screen.ABOUT_APP)}
-                className={screenButton}>{Localisation.AboutApp(lang)}
-            </button>
-        </div>
+        <nav className='menu'>
+            <Home/>
+            <FAQ/>
+            <LangMenu/>
+            <AboutApp/>
+        </nav>
     )
 }
 
+const Title = () => <Link to="/" className='title'>Video To Music Converter</Link>
+
 export default function AppBar() {
     return (
-        <div className='app-bar'>
+        <nav className='app-bar'>
             <Title/>
             <Menu/>
-        </div>
+        </nav>
     )
 }

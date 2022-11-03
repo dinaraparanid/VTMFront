@@ -5,8 +5,10 @@ const CurrentScreenContext = createContext<{ currentScreen: Screen, setCurrentSc
     currentScreen: Screen.HOME, setCurrentScreen() {}
 })
 
+/** @deprecated Switched to react-router-dom */
 export const useCurrentScreen = () => useContext(CurrentScreenContext)
 
+/** @deprecated Switched to react-router-dom */
 export default function CurrentScreenProvider({ children }: { children: ReactElement | Array<ReactElement> }) {
     const [currentScreen, setCurrentScreen] = useState(Screen.HOME)
     return (

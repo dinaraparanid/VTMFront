@@ -1,14 +1,3 @@
-.dropdown {
-    background-color: #ffc800;
-    float: left;
-    overflow: hidden;
-    height: 100%;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-style: italic;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -33,9 +22,4 @@
     text-align: left;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 .dropdown-content button:hover { background-color: #5e009c }
-.dropdown:hover .dropdown-content { display: block; }

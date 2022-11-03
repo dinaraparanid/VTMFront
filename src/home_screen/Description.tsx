@@ -9,9 +9,9 @@ import {useLang} from "../utils/lang/LangProvider";
 
 export default function Description() {
     const { lang } = useLang()
-    const howToUseIt = lang === Language.RUSSIAN ? 'how-to-use-it-serif' : 'how-to-use-it-pristina'
-    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina'
-    const supportedSites = lang === Language.RUSSIAN ? 'supported-sites-serif' : 'supported-sites-pristina'
+    const [howToUseIt, textClass, supportedSites] = lang === Language.RUSSIAN ?
+        ['how-to-use-it-serif', 'text-serif', 'supported-sites-serif'] :
+        ['how-to-use-it-pristina', 'text-pristina', 'supported-sites-pristina']
 
     return (
         <div className='description'>
@@ -21,9 +21,8 @@ export default function Description() {
                 Localisation.PasteTheCopiedLinkIntoTheInputField(lang),
                 Localisation.ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting(lang),
                 Localisation.EnjoyTheResultingTrack(lang)
-            ].map((text, ind) =>
-                ind === 3 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
-            )}
+            ].map((text, ind) => <p className={textClass}>{text}</p>)
+            }
             <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
         </div>
     )

@@ -7,9 +7,9 @@ export default function HomeScreen() {
     const { videoInfo } = useVideoInfo()
 
     return (
-        <div>
+        <div className='home-screen'>
             <Converter/>
-            { videoInfo === null ? <Description/> : <div/> }
+            { videoInfo === null ? <Description/> : <></> }
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import CurrentScreenProvider from "./utils/current_screen/CurrentScreenProvider";
 import LangProvider from "./utils/lang/LangProvider";
 
 const root = ReactDOM.createRoot(
@@ -9,9 +8,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(<React.StrictMode>
-    <CurrentScreenProvider>
-        <LangProvider>
-            <App/>
-        </LangProvider>
-    </CurrentScreenProvider>
+    <LangProvider>
+        <App/>
+    </LangProvider>
 </React.StrictMode>);

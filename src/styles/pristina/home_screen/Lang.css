@@ -1,4 +1,15 @@
-.dropdown .lang-button-pristina {
+.dropdown-pristina {
+    background-color: #ffc800;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: italic;
+}
+
+.dropdown-pristina .lang-button-pristina {
     border: none;
     outline: none;
     margin: 0;
@@ -15,4 +26,9 @@
     align-items: center;
 }
 
-.dropdown:hover .lang-button-pristina { background-color: #ffab00 }
+.dropdown-pristina:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-pristina:hover .lang-button-pristina { background-color: #ffab00 }
+.dropdown-pristina:hover .dropdown-content { display: block; }

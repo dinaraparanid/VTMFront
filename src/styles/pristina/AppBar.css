@@ -8,6 +8,8 @@
     font-size: 30px;
     font-family: Pristina, serif;
     text-shadow: 1px 1px 5px #4a0071;
+    text-decoration: none;
+    color: inherit;
     font-style: italic;
     letter-spacing: 1px;
     height: 75%;

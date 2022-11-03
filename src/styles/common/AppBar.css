@@ -10,12 +10,12 @@ body { margin: 0; }
     box-shadow: 0 10px 20px #514500;
 }
 
-.app-bar button.title {
+.title {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 50%;
-    margin-top: 15px;
+    margin-top: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: Pristina, serif;
@@ -23,6 +23,8 @@ body { margin: 0; }
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #4a0071;
+    text-decoration: none;
+    color: inherit;
     letter-spacing: 1px;
     border: none;
     outline: none;

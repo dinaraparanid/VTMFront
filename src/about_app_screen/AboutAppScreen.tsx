@@ -8,8 +8,9 @@ import React from "react";
 
 export function AboutAppScreen() {
     const { lang } = useLang()
-    const aboutAppData = lang === Language.RUSSIAN ? 'about-app-data-serif' : 'about-app-data-pristina'
-    const textClass = lang === Language.RUSSIAN ? 'text-serif' : 'text-pristina'
+    const [aboutAppData, textClass] = lang === Language.RUSSIAN ?
+        ['about-app-data-serif', 'text-serif'] :
+        ['about-app-data-pristina', 'text-pristina']
 
     return (
         <div className='about-app'>

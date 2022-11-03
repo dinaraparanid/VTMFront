@@ -1,8 +1,5 @@
 .converter {
     background-color: #ffc800;
-    margin-top: 75px;
-    margin-right: 250px;
-    margin-left: 250px;
     border-radius: 10px;
     box-shadow: 0 10px 45px #514500;
 }
@@ -82,7 +79,7 @@
     background-color: #4a0071;
     width: 100%;
     height: 50px;
-    margin-top: 60px;
+    margin-top: 40px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
