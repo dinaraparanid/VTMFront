@@ -6,6 +6,8 @@ import '../styles/serif/home_screen/Description.css'
 
 import {Language, Localisation} from "../utils/lang/Localisation";
 import {useLang} from "../utils/lang/LangProvider";
+import {motion} from "framer-motion";
+import {Transition} from "../utils/Transition";
 
 export default function Description() {
     const { lang } = useLang()
@@ -13,9 +15,12 @@ export default function Description() {
         ['how-to-use-it-serif', 'text-serif', 'supported-sites-serif'] :
         ['how-to-use-it-pristina', 'text-pristina', 'supported-sites-pristina']
 
+    const DescriptionHeader = () => <div className={howToUseIt}>{Localisation.HowToUseIt(lang)}</div>
+    const SupportedSites = () => <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
+
     return (
-        <div className='description'>
-            <div className={howToUseIt}>{Localisation.HowToUseIt(lang)}</div>
+        <motion.div className='description' {...Transition}>
+            <DescriptionHeader/>
             {[
                 Localisation.CopyTheUrlLinkToTheVideo(lang),
                 Localisation.PasteTheCopiedLinkIntoTheInputField(lang),
@@ -23,7 +28,7 @@ export default function Description() {
                 Localisation.EnjoyTheResultingTrack(lang)
             ].map((text, ind) => <p className={textClass}>{text}</p>)
             }
-            <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
-        </div>
+            <SupportedSites/>
+        </motion.div>
     )
 }

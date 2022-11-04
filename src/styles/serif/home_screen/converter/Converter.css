@@ -1,9 +1,30 @@
 .converter .paste-url-serif {
     font-style: italic;
     text-shadow: 1px 1px 5px #4a0071;
+    text-align: start;
     font-size: 18px;
     font-weight: bold;
     font-family: serif;
     letter-spacing: 1px;
     padding-top: 10px;
+}
+
+.converter .ready-to-convert-serif {
+    background-color: #4a0071;
+    font-family: serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #ffab00;
+    text-align: center;
+    text-decoration: none;
+    color: #ffc800;
+    letter-spacing: 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-left: 0;
 }

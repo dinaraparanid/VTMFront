@@ -34,14 +34,16 @@
 }
 
 .converter .button-column {
-    width: 115px;
-    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .converter .download-button {
     background-color: #220021;
     color: #ffc800;
-    width: 100%;
+    width: 115px;
     padding: 10px 0;
     font-style: italic;
     text-shadow: 1px 1px 5px grey;
@@ -55,7 +57,7 @@
 .converter .next-button {
     background-color: #220021;
     color: #ffc800;
-    width: 100%;
+    width: 115px;
     padding: 10px 0;
     font-style: italic;
     text-shadow: 1px 1px 5px grey;
@@ -79,7 +81,7 @@
     background-color: #4a0071;
     width: 100%;
     height: 50px;
-    margin-top: 40px;
+    margin-top: 35px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }

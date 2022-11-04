@@ -31,7 +31,7 @@ Number.prototype.toTimeString = function (this: number)  {
     return `${hours.toStringIfNotZero(it => `${it}:`)}${minutes.toStringIfNotZero(it => `${it}:`)}${self}`;
 };
 
-export default function VideoInfo(videoInfo: VideoData) {
+export default function VideoInfo({videoInfo}: {videoInfo: VideoData}) {
     const { lang } = useLang()
     const videoTitle = lang === Language.RUSSIAN ? 'video-title-serif' : 'video-title-pristina';
     const durationTxt = lang === Language.RUSSIAN ? 'duration-serif' : 'duration-pristina';

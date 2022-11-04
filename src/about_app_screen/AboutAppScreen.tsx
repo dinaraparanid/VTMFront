@@ -1,10 +1,13 @@
-import {useLang} from "../utils/lang/LangProvider";
-import {Language, Localisation} from "../utils/lang/Localisation";
+import React from "react";
 
 import '../styles/common/about_app_screen/AboutApp.css'
 import '../styles/pristina/about_app_screen/AboutApp.css'
 import '../styles/serif/about_app_screen/AboutApp.css'
-import React from "react";
+
+import {useLang} from "../utils/lang/LangProvider";
+import {Language, Localisation} from "../utils/lang/Localisation";
+import {motion} from "framer-motion";
+import {Transition} from "../utils/Transition";
 
 export function AboutAppScreen() {
     const { lang } = useLang()
@@ -13,13 +16,13 @@ export function AboutAppScreen() {
         ['about-app-data-pristina', 'text-pristina']
 
     return (
-        <div className='about-app'>
+        <motion.div className='about-app' {...Transition}>
             <div className={aboutAppData}>{Localisation.AboutApp(lang)}</div>
             {[
                 'TODO: About App data'
             ].map((text, ind) =>
                 ind === 0 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
             )}
-        </div>
+        </motion.div>
     )
 }

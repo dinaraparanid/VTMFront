@@ -6,7 +6,8 @@ import {FAQScreen} from "./faq_screen/FAQScreen";
 import {AboutAppScreen} from "./about_app_screen/AboutAppScreen";
 import {Screen} from "./utils/current_screen/Screen";
 import VideoInfProvider from "./utils/data/VideoInfoProvider";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, useLocation} from "react-router-dom";
+import Router from "./Router";
 
 /** @deprecated Switched to react-router-dom */
 const CurrentScreen = (currentScreen: Screen) => {
@@ -24,11 +25,7 @@ export default function App() {
             <BrowserRouter>
                 <AppBar/>
                 <VideoInfProvider>
-                    <Routes>
-                        <Route path="/" element=<HomeScreen/>/>
-                        <Route path="/faq" element=<FAQScreen/>/>
-                        <Route path="/about_app" element=<AboutAppScreen/>/>
-                    </Routes>
+                    <Router/>
                 </VideoInfProvider>
             </BrowserRouter>
         </div>

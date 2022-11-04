@@ -10,7 +10,7 @@ import './styles/serif/home_screen/Lang.css'
 
 import {Language, Localisation} from './utils/lang/Localisation';
 import {useLang} from "./utils/lang/LangProvider";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Menu() {
     const { lang, setLanguage } = useLang()
@@ -19,9 +19,9 @@ function Menu() {
         ['screen-button-serif', 'lang-button-serif', 'dropdown-serif'] :
         ['screen-button-pristina', 'lang-button-pristina', 'dropdown-pristina']
 
-    const Home = () => <Link to="/" className={screenButton}>{Localisation.Home(lang)}</Link>
-    const FAQ = () => <Link to="faq" className={screenButton}>{Localisation.FAQ(lang)}</Link>
-    const AboutApp = () => <Link to="about_app" className={screenButton}>{Localisation.AboutApp(lang)}</Link>
+    const Home = () => <NavLink to="/" className={screenButton}>{Localisation.Home(lang)}</NavLink>
+    const FAQ = () => <NavLink to="faq" className={screenButton}>{Localisation.FAQ(lang)}</NavLink>
+    const AboutApp = () => <NavLink to="about_app" className={screenButton}>{Localisation.AboutApp(lang)}</NavLink>
 
     const LangMenu = () => <div className={dropdown}>
         <button className={langButton}>{Localisation.Language(lang)}</button>
@@ -43,7 +43,7 @@ function Menu() {
     )
 }
 
-const Title = () => <Link to="/" className='title'>Video To Music Converter</Link>
+const Title = () => <NavLink to="/" className='title'>Video To Music Converter</NavLink>
 
 export default function AppBar() {
     return (

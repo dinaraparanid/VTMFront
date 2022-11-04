@@ -70,4 +70,7 @@ export class Localisation {
 
     public static readonly Duration = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Продолжительность' : 'Duration'
+
+    public static readonly ReadyToConvert = (lang: Language) =>
+        lang ===Language.RUSSIAN ? 'Готово к Конвертации' : 'Ready to Convert'
 }
