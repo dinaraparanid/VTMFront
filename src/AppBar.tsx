@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './styles/common/AppBar.css'
-import './styles/pristina/AppBar.css'
+import './styles/audiowide/AppBar.css'
 import './styles/serif/AppBar.css'
 
 import './styles/common/home_screen/Lang.css'
-import './styles/pristina/home_screen/Lang.css'
+import './styles/audiowide/home_screen/Lang.css'
 import './styles/serif/home_screen/Lang.css'
 
 import {Language, Localisation} from './utils/lang/Localisation';
@@ -17,7 +17,7 @@ function Menu() {
     const languages = ['Русский', 'English']
     const [screenButton, langButton, dropdown] = lang === Language.RUSSIAN ?
         ['screen-button-serif', 'lang-button-serif', 'dropdown-serif'] :
-        ['screen-button-pristina', 'lang-button-pristina', 'dropdown-pristina']
+        ['screen-button-audiowide', 'lang-button-audiowide', 'dropdown-audiowide']
 
     const Home = () => <NavLink to="/" className={screenButton}>{Localisation.Home(lang)}</NavLink>
     const FAQ = () => <NavLink to="faq" className={screenButton}>{Localisation.FAQ(lang)}</NavLink>

@@ -1,0 +1,10 @@
+.text-serif {
+    font-family: serif;
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

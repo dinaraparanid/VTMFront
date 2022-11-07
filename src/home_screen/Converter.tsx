@@ -1,7 +1,7 @@
 import React, {useRef, useState} from "react";
 
 import '../styles/common/home_screen/converter/Converter.css'
-import '../styles/pristina/home_screen/converter/Converter.css'
+import '../styles/audiowide/home_screen/converter/Converter.css'
 import '../styles/serif/home_screen/converter/Converter.css'
 
 import {Language, Localisation} from "../utils/lang/Localisation";
@@ -29,8 +29,8 @@ export default function Converter() {
     const urlRef = useRef('')
 
     const converterHeader = videoInfo === null ?
-        (lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-pristina') :
-        (lang === Language.RUSSIAN ? 'ready-to-convert-serif' : 'ready-to-convert-pristina');
+        (lang === Language.RUSSIAN ? 'paste-url-serif' : 'paste-url-audiowide') :
+        (lang === Language.RUSSIAN ? 'ready-to-convert-serif' : 'ready-to-convert-audiowide');
 
     const [buttonTxt, converterHeight] = videoInfo === null ?
         [Localisation.Start(lang), 200] :
@@ -61,7 +61,10 @@ export default function Converter() {
                 else
                     getVideoData(urlRef.current)
                         ?.then(
-                            resp => setVideoInfo(resp.data),
+                            resp =>
+                                resp.status === 200 ?
+                                    setVideoInfo(resp.data) :
+                                    alert(resp.data),
                             reason => alert(reason)
                         )
                         .catch(console.error)

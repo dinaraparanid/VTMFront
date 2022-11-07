@@ -1,0 +1,8 @@
+.text-audiowide {
+    font-family: 'Audiowide', serif;
+    font-size: 21px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px #4a0071;
+    letter-spacing: 1px;
+    margin-left: 40px;
+}

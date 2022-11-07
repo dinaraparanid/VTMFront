@@ -1,7 +1,7 @@
-.description .how-to-use-it-pristina {
+.description .how-to-use-it-audiowide {
     background-color: #4a0071;
-    font-family: Pristina, serif;
-    font-size: 45px;
+    font-family: 'Audiowide', serif;
+    font-size: 32px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #ffab00;
@@ -10,15 +10,15 @@
     color: #ffc800;
     letter-spacing: 1px;
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.description .supported-sites-pristina {
-    font-family: Pristina, serif;
-    font-size: 45px;
+.description .supported-sites-audiowide {
+    font-family: 'Audiowide', serif;
+    font-size: 32px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #4a0071;
@@ -29,13 +29,4 @@
     width: 100%;
     height: 100%;
     margin-top: 50px;
-}
-
-.text-pristina {
-    font-family: Pristina, serif;
-    font-size: 28px;
-    font-style: italic;
-    text-shadow: 1px 1px 5px #4a0071;
-    letter-spacing: 1px;
-    margin-left: 40px;
 }

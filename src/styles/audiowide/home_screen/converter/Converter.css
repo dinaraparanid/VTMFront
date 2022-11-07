@@ -1,18 +1,18 @@
-.converter .paste-url-pristina {
+.converter .paste-url-audiowide {
     font-style: italic;
     text-shadow: 1px 1px 5px #4a0071;
     text-align: start;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: Pristina, serif;
+    font-family: 'Audiowide', serif;
     letter-spacing: 1px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
-.converter .ready-to-convert-pristina {
+.converter .ready-to-convert-audiowide {
     background-color: #4a0071;
-    font-family: Pristina, serif;
-    font-size: 35px;
+    font-family: 'Audiowide', serif;
+    font-size: 30px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #ffab00;

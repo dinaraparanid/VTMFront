@@ -1,19 +1,20 @@
 import React from "react";
 
 import '../styles/common/about_app_screen/AboutApp.css'
-import '../styles/pristina/about_app_screen/AboutApp.css'
+import '../styles/audiowide/about_app_screen/AboutApp.css'
 import '../styles/serif/about_app_screen/AboutApp.css'
+import '../styles/audiowide/Text.css'
 
 import {useLang} from "../utils/lang/LangProvider";
 import {Language, Localisation} from "../utils/lang/Localisation";
 import {motion} from "framer-motion";
 import {Transition} from "../utils/Transition";
 
-export function AboutAppScreen() {
+export default function AboutAppScreen() {
     const { lang } = useLang()
     const [aboutAppData, textClass] = lang === Language.RUSSIAN ?
         ['about-app-data-serif', 'text-serif'] :
-        ['about-app-data-pristina', 'text-pristina']
+        ['about-app-data-audiowide', 'text-audiowide']
 
     return (
         <motion.div className='about-app' {...Transition}>

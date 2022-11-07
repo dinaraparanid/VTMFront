@@ -1,4 +1,4 @@
-.dropdown-pristina {
+.dropdown-audiowide {
     background-color: #ffc800;
     float: left;
     overflow: hidden;
@@ -9,14 +9,14 @@
     font-style: italic;
 }
 
-.dropdown-pristina .lang-button-pristina {
+.dropdown-audiowide .lang-button-audiowide {
     border: none;
     outline: none;
     margin: 0;
     padding-top: 10px;
     background-color: inherit;
-    font-size: 30px;
-    font-family: Pristina, serif;
+    font-size: 22px;
+    font-family: 'Audiowide', serif;
     text-shadow: 1px 1px 5px #4a0071;
     font-style: italic;
     letter-spacing: 1px;
@@ -26,9 +26,9 @@
     align-items: center;
 }
 
-.dropdown-pristina:hover .dropdown-content {
+.dropdown-audiowide:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-pristina:hover .lang-button-pristina { background-color: #ffab00 }
-.dropdown-pristina:hover .dropdown-content { display: block; }
+.dropdown-audiowide:hover .lang-button-audiowide { background-color: #ffab00 }
+.dropdown-audiowide:hover .dropdown-content { display: block; }

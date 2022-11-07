@@ -1,19 +1,19 @@
-.video-info .video-title-pristina {
+.video-info .video-title-audiowide {
     font-style: italic;
     text-shadow: 1px 1px 5px #4a0071;
-    font-size: 26px;
+    font-size: 25px;
     font-weight: bold;
-    font-family: Pristina, serif;
+    font-family: 'Audiowide', serif;
     letter-spacing: 1px;
     text-align: center;
 }
 
-.video-info .duration-pristina {
+.video-info .duration-audiowide {
     font-style: italic;
     text-shadow: 1px 1px 5px #4a0071;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: Pristina, serif;
+    font-family: 'Audiowide', serif;
     letter-spacing: 1px;
     text-align: center;
 }
