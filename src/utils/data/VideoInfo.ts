@@ -12,4 +12,13 @@ export class VideoInfo {
         this._filename = filename
         this.thumbnail = thumbnail
     }
+
+    static equals = (self: VideoInfo | null, other: VideoInfo | null) =>
+        (self === null && other === null) || (
+            self!.title === other!.title &&
+            self!.duration === other!.duration &&
+            self!.description === other!.description &&
+            self!._filename === other!._filename &&
+            self!.thumbnail === other!.thumbnail
+        )
 }

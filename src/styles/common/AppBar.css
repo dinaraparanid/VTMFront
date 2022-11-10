@@ -2,12 +2,12 @@ body { margin: 0; }
 
 .app-bar {
     display: flex;
-    background-color: #ffc800;
+    background-color: #330063;
     overflow: hidden;
     min-height: 75px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 10px 20px #514500;
+    box-shadow: 0 3px 17px #E72696;
 }
 
 .title {
@@ -22,9 +22,9 @@ body { margin: 0; }
     font-size: 36px;
     font-style: italic;
     font-weight: bold;
-    text-shadow: 1px 1px 5px #4a0071;
+    text-shadow: 1px 1px 5px #ffab00;
     text-decoration: none;
-    color: inherit;
+    color: #facf31;
     letter-spacing: 1px;
     border: none;
     outline: none;

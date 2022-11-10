@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactElement} from "react";
 
 import '../styles/common/about_app_screen/AboutApp.css'
 import '../styles/audiowide/about_app_screen/AboutApp.css'
@@ -7,8 +7,7 @@ import '../styles/audiowide/Text.css'
 
 import {useLang} from "../utils/lang/LangProvider";
 import {Language, Localisation} from "../utils/lang/Localisation";
-import {motion} from "framer-motion";
-import {Transition} from "../utils/Transition";
+import AnimatedDiv from "../utils/animated/AnimatedDiv";
 
 export default function AboutAppScreen() {
     const { lang } = useLang()
@@ -17,13 +16,13 @@ export default function AboutAppScreen() {
         ['about-app-data-audiowide', 'text-audiowide']
 
     return (
-        <motion.div className='about-app' {...Transition}>
+        <AnimatedDiv className='about-app'>
             <div className={aboutAppData}>{Localisation.AboutApp(lang)}</div>
             {[
                 'TODO: About App data'
-            ].map((text, ind) =>
+            ].map((text, ind): ReactElement =>
                 ind === 0 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
             )}
-        </motion.div>
+        </AnimatedDiv>
     )
 }

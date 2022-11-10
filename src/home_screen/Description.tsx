@@ -8,8 +8,7 @@ import '../styles/serif/Text.css'
 
 import {Language, Localisation} from "../utils/lang/Localisation";
 import {useLang} from "../utils/lang/LangProvider";
-import {motion} from "framer-motion";
-import {Transition} from "../utils/Transition";
+import AnimatedDiv from "../utils/animated/AnimatedDiv";
 
 export default function Description() {
     const { lang } = useLang()
@@ -21,7 +20,7 @@ export default function Description() {
     const SupportedSites = () => <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
 
     return (
-        <motion.div className='description' {...Transition}>
+        <AnimatedDiv className='description'>
             <DescriptionHeader/>
             {[
                 Localisation.CopyTheUrlLinkToTheVideo(lang),
@@ -31,6 +30,6 @@ export default function Description() {
             ].map((text, ind) => <p className={textClass}>{text}</p>)
             }
             <SupportedSites/>
-        </motion.div>
+        </AnimatedDiv>
     )
 }

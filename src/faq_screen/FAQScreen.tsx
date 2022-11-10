@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 import '../styles/common/faq_screen/FAQ.css'
 import '../styles/audiowide/faq_screen/FAQ.css'
@@ -8,8 +8,9 @@ import '../styles/serif/Text.css'
 
 import {useLang} from "../utils/lang/LangProvider";
 import {Language, Localisation} from "../utils/lang/Localisation";
-import {motion} from "framer-motion";
-import {Transition} from "../utils/Transition";
+import AnimatedDiv from "../utils/animated/AnimatedDiv";
+
+type FaqDivData = {faqData: string, textClass: string, lang: Language}
 
 export default function FAQScreen() {
     const { lang } = useLang()
@@ -17,8 +18,8 @@ export default function FAQScreen() {
         ['faq-data-serif', 'text-serif'] :
         ['faq-data-audiowide', 'text-audiowide']
 
-    return (
-        <motion.div className='faq' {...Transition}>
+    const FaqDiv = ({faqData, textClass, lang}: FaqDivData) =>
+        <AnimatedDiv className='faq'>
             <div className={faqData}>{Localisation.FAQ(lang)}</div>
             {[
                 'TODO: FAQ information'
@@ -26,6 +27,15 @@ export default function FAQScreen() {
                 // TODO: FAQ information
                 ind === 0 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
             )}
-        </motion.div>
+        </AnimatedDiv>
+
+    const PureFaqDiv = memo(({faqData, textClass, lang}: FaqDivData) =>
+        <FaqDiv faqData={faqData} textClass={textClass} lang={lang}/>,
+        (oldData: FaqDivData, newData: FaqDivData) =>
+            oldData.faqData === newData.faqData &&
+            oldData.textClass === newData.textClass &&
+            oldData.lang === newData.lang
     )
+
+    return <PureFaqDiv faqData={faqData} textClass={textClass} lang={lang}/>
 }

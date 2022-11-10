@@ -1,5 +1,5 @@
 .dropdown-audiowide {
-    background-color: #ffc800;
+    background-color: inherit;
     float: left;
     overflow: hidden;
     height: 100%;
@@ -17,7 +17,8 @@
     background-color: inherit;
     font-size: 22px;
     font-family: 'Audiowide', serif;
-    text-shadow: 1px 1px 5px #4a0071;
+    text-shadow: 1px 1px 5px #ffab00;
+    color: #facf31;
     font-style: italic;
     letter-spacing: 1px;
     height: 75%;
@@ -30,5 +31,5 @@
     display: block;
 }
 
-.dropdown-audiowide:hover .lang-button-audiowide { background-color: #ffab00 }
+.dropdown-audiowide:hover .lang-button-audiowide { background-color: #451473 }
 .dropdown-audiowide:hover .dropdown-content { display: block; }

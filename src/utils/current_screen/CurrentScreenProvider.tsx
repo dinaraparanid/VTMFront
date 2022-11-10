@@ -1,4 +1,4 @@
-import React, {createContext, ReactElement, useContext, useState} from "react";
+import React, {createContext, useContext, useState} from "react";
 import {Screen} from "./Screen";
 
 const CurrentScreenContext = createContext<{ currentScreen: Screen, setCurrentScreen: (screen: Screen) => void }>({
@@ -9,7 +9,7 @@ const CurrentScreenContext = createContext<{ currentScreen: Screen, setCurrentSc
 export const useCurrentScreen = () => useContext(CurrentScreenContext)
 
 /** @deprecated Switched to react-router-dom */
-export default function CurrentScreenProvider({ children }: { children: ReactElement | Array<ReactElement> }) {
+export default function CurrentScreenProvider({ children }: { children: React.ReactNode }) {
     const [currentScreen, setCurrentScreen] = useState(Screen.HOME)
     return (
         <CurrentScreenContext.Provider value={{ currentScreen, setCurrentScreen }}>
