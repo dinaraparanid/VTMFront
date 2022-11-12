@@ -1,6 +1,7 @@
 .converter .paste-url-serif {
     font-style: italic;
-    text-shadow: 1px 1px 5px #4a0071;
+    color: #f9c80e;
+    text-shadow: 0 1px 4px #ffab00;
     text-align: start;
     font-size: 18px;
     font-weight: bold;
@@ -10,7 +11,7 @@
 }
 
 .converter .ready-to-convert-serif {
-    background-color: #4a0071;
+    background-color: #330063;
     font-family: serif;
     font-size: 20px;
     font-style: italic;
@@ -18,7 +19,8 @@
     text-shadow: 1px 1px 5px #ffab00;
     text-align: center;
     text-decoration: none;
-    color: #ffc800;
+    color: #facf31;
+    box-shadow: 0 5px 20px #460063;
     letter-spacing: 1px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -27,4 +29,5 @@
     margin-right: 0;
     margin-top: 0;
     margin-left: 0;
+    border-bottom-style: wave;
 }

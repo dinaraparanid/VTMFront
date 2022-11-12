@@ -10,11 +10,11 @@ import PureStartDownloadButton from "../start_download_button/PureStartDownloadB
 export default function UrlEditor(
     {
         urlEditTextProps: {lang, onChange},
-        startDownloadButton: {videoInfo, url, outputFormat}
+        startDownloadButton: {urlRef, outputFormat}
     }: UrlEditorProps
 ) {
     return <AnimatedDiv className='row'>
         <PureUrlEditText lang={lang} onChange={onChange}/>
-        <PureStartDownloadButton videoInfo={videoInfo} url={url} lang={lang} outputFormat={outputFormat}/>
+        <PureStartDownloadButton urlRef={urlRef} lang={lang} outputFormat={outputFormat}/>
     </AnimatedDiv>
 }

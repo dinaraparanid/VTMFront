@@ -4,8 +4,8 @@ import {StartDownloadButtonProps} from "./StartDownloadButtonProps";
 import {useVideoInfo} from "../../../utils/data/VideoInfoProvider";
 import {Localisation} from "../../../utils/lang/Localisation";
 
-export default function StartDownloadButton({videoInfo, url, outputFormat, lang}: StartDownloadButtonProps) {
-    const { setVideoInfo } = useVideoInfo()
+export default function StartDownloadButton({urlRef, outputFormat, lang}: StartDownloadButtonProps) {
+    const { videoInfo, setVideoInfo } = useVideoInfo()
 
     const buttonTxt = videoInfo === null ?
         Localisation.Start(lang) :
@@ -16,9 +16,9 @@ export default function StartDownloadButton({videoInfo, url, outputFormat, lang}
         style={{width: videoInfo === null ? '115px' : '300px', marginLeft: videoInfo === null ? '20px' : 0}}
         onClick={ () => {
             if (videoInfo !== null)
-                downloadFile(url, videoInfo._filename, outputFormat.toLowerCase())
+                downloadFile(urlRef.current, videoInfo._filename, outputFormat.toLowerCase())
             else
-                getVideoData(url)
+                getVideoData(urlRef.current)
                     ?.then(
                         resp =>
                             resp.status === 200 ?

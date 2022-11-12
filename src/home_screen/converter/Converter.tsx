@@ -36,8 +36,7 @@ export default function Converter() {
                         onChange: event => urlRef.current = event.target.value
                     },
                     startDownloadButton: {
-                        videoInfo: videoInfo,
-                        url: urlRef.current,
+                        urlRef: urlRef,
                         outputFormat: outputFormat,
                         lang: lang
                     },
@@ -45,8 +44,7 @@ export default function Converter() {
                 videoGetterProps={{
                     buttonProps: {
                         startDownloadButtonProps: {
-                            videoInfo: videoInfo,
-                            url: urlRef.current,
+                            urlRef: urlRef,
                             outputFormat: outputFormat,
                             lang: lang
                         },

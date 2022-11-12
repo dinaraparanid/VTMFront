@@ -1,19 +1,21 @@
 .description .how-to-use-it-audiowide {
-    background-color: #4a0071;
+    background-color: #330063;
     font-family: 'Audiowide', serif;
-    font-size: 32px;
+    font-size: 30px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #ffab00;
     text-align: center;
     text-decoration: none;
-    color: #ffc800;
+    color: #facf31;
+    box-shadow: 0 5px 20px #460063;
     letter-spacing: 1px;
     width: 100%;
     padding-top: 25px;
     padding-bottom: 25px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-bottom-style: wave;
 }
 
 .description .supported-sites-audiowide {
@@ -21,11 +23,11 @@
     font-size: 32px;
     font-style: italic;
     font-weight: bold;
-    text-shadow: 1px 1px 5px #4a0071;
     text-align: center;
     text-decoration: none;
-    color: #5e009c;
     letter-spacing: 1px;
+    color: #2de2e6;
+    text-shadow: 0 1px 4px #E72696;
     width: 100%;
     height: 100%;
     margin-top: 50px;

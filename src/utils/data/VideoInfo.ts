@@ -15,6 +15,7 @@ export class VideoInfo {
 
     static equals = (self: VideoInfo | null, other: VideoInfo | null) =>
         (self === null && other === null) || (
+            self !== null && other !== null &&
             self!.title === other!.title &&
             self!.duration === other!.duration &&
             self!.description === other!.description &&

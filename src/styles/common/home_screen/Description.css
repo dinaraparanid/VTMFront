@@ -8,10 +8,11 @@
 }
 
 .description {
-    background-color: #ffc800;
+    background-color: #2f002e;
     margin-top: 75px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 100vh;
     flex: 1;
+    box-shadow: 0 5px 25px #E72696;
 }

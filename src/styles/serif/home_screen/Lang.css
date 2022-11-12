@@ -1,5 +1,5 @@
 .dropdown-serif {
-    background-color: #ffc800;
+    background-color: inherit;
     float: left;
     overflow: hidden;
     height: 100%;
@@ -16,7 +16,8 @@
     background-color: inherit;
     font-size: 20px;
     font-family: serif;
-    text-shadow: 1px 1px 5px #4a0071;
+    text-shadow: 1px 1px 5px #ffab00;
+    color: #facf31;
     font-style: italic;
     letter-spacing: 1px;
     height: 75%;
@@ -29,5 +30,5 @@
     display: block;
 }
 
-.dropdown-serif:hover .lang-button-serif { background-color: #ffab00 }
+.dropdown-serif:hover .lang-button-serif { background-color: #451473 }
 .dropdown-serif:hover .dropdown-content { display: block; }

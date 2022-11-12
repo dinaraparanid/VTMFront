@@ -5,14 +5,13 @@ import PureNextButton from "./next_button/PureNextButton";
 
 export default function Buttons(
     {
-        startDownloadButtonProps: {url, outputFormat},
+        startDownloadButtonProps: {urlRef, outputFormat},
         nextButtonProps: {lang, videoInfo, onClick}
     }: ButtonsProps
 ) {
     return <div className='button-column'>
         <PureStartDownloadButton
-            videoInfo={videoInfo}
-            url={url}
+            urlRef={urlRef}
             outputFormat={outputFormat}
             lang={lang}
         />
