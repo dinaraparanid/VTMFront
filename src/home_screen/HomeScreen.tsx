@@ -10,7 +10,7 @@ export default function HomeScreen() {
     return (
         <div className='home-screen'>
             <OutputFormatProvider><Converter/></OutputFormatProvider>
-            { videoInfo === null ? <Description/> : <></> }
+            { videoInfo === null && <Description/> }
         </div>
     )
 }

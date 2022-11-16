@@ -1,5 +1,5 @@
 import React from "react";
-import {downloadFile, getVideoData} from "../../../api_client/Client";
+import {downloadFile, getVideoData} from "../../../api_client/VTMClient";
 import {StartDownloadButtonProps} from "./StartDownloadButtonProps";
 import {useVideoInfo} from "../../../utils/data/VideoInfoProvider";
 import {Localisation} from "../../../utils/lang/Localisation";
