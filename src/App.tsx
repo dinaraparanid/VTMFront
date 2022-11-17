@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles/common/App.css'
 
-import AppBar from "./AppBar";
+import AppBar from "./app_bar/AppBar";
 import VideoInfProvider from "./utils/data/VideoInfoProvider";
 import {BrowserRouter} from "react-router-dom";
 import Router from "./Router";

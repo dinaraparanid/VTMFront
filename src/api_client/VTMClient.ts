@@ -12,19 +12,20 @@ export function getVideoData(url: string) {
     return axios.get<VideoInfo>(`${API_URL}/get_video?url=${url}`)
 }
 
-export function downloadFile(videoUrl: string, fileName: string, extension: string) {
+export function downloadFile(videoUrl: string, fileName: string, extension: string, authToken: string | null = null) {
     if (videoUrl === '') {
         alert('URL is empty')
         return null;
     }
 
     const fileUrl = `${API_URL}/convert_video?url=${videoUrl}&ext=${extension}`
-    console.log(fileUrl)
+    const headers = authToken ? { headers: { Authorization: `Bearer ${authToken}` } } : {}
 
     return axios({
         url: fileUrl,
         method: 'GET',
-        responseType: 'blob'
+        responseType: 'blob',
+        ...headers
     }).then(response => {
         if (response.status !== 200) {
             alert(response.data)

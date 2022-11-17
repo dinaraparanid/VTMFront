@@ -1,22 +1,21 @@
-.dropdown-audiowide {
+.dropdown-serif {
     background-color: inherit;
     float: left;
     overflow: hidden;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
     font-style: italic;
 }
 
-.dropdown-audiowide .lang-button-audiowide {
+.dropdown-serif .dropdown-button-serif {
     border: none;
     outline: none;
     margin: 0;
-    padding-top: 10px;
     background-color: inherit;
-    font-size: 22px;
-    font-family: 'Audiowide', serif;
+    font-size: 20px;
+    font-family: serif;
     text-shadow: 1px 1px 5px #ffab00;
     color: #facf31;
     font-style: italic;
@@ -27,9 +26,9 @@
     align-items: center;
 }
 
-.dropdown-audiowide:hover .dropdown-content {
+.dropdown-serif:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-audiowide:hover .lang-button-audiowide { background-color: #451473 }
-.dropdown-audiowide:hover .dropdown-content { display: block; }
+.dropdown-serif:hover .dropdown-button-serif { background-color: #451473 }
+.dropdown-serif:hover .dropdown-content { display: block; }

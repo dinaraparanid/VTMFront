@@ -3,9 +3,11 @@ import {downloadFile, getVideoData} from "../../../api_client/VTMClient";
 import {StartDownloadButtonProps} from "./StartDownloadButtonProps";
 import {useVideoInfo} from "../../../utils/data/VideoInfoProvider";
 import {Localisation} from "../../../utils/lang/Localisation";
+import {useUser} from "../../../utils/user_provider/UserProvider";
 
 export default function StartDownloadButton({urlRef, outputFormat, lang}: StartDownloadButtonProps) {
     const { videoInfo, setVideoInfo } = useVideoInfo()
+    const { user } = useUser()
 
     const buttonTxt = videoInfo === null ?
         Localisation.Start(lang) :
@@ -16,7 +18,12 @@ export default function StartDownloadButton({urlRef, outputFormat, lang}: StartD
         style={{width: videoInfo === null ? '115px' : '300px', marginLeft: videoInfo === null ? '20px' : 0}}
         onClick={ () => {
             if (videoInfo !== null)
-                downloadFile(urlRef.current, videoInfo._filename, outputFormat.toLowerCase())
+                downloadFile(
+                    urlRef.current,
+                    videoInfo._filename,
+                    outputFormat.toLowerCase(),
+                    user?.token
+                )?.catch(alert)
             else
                 getVideoData(urlRef.current)
                     ?.then(
@@ -26,7 +33,7 @@ export default function StartDownloadButton({urlRef, outputFormat, lang}: StartD
                                 alert(resp.data),
                         reason => alert(reason)
                     )
-                    .catch(console.error)
+                    .catch(alert)
         }}
     >{buttonTxt}</button>
 }
