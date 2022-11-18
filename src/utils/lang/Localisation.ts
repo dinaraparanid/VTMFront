@@ -13,27 +13,27 @@ export class Localisation {
     }
 
     public static readonly HowToUseIt = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Как Этим Пользоваться?' : 'How To Use It'
+        lang === Language.RUSSIAN ? 'Как Пользоваться?' : 'How To Use It'
 
     public static readonly CopyTheUrlLinkToTheVideo = (lang: Language) =>
         lang === Language.RUSSIAN ?
-            '1. Скопируйте URL ссылку на видео' :
-            '1. Copy the URL link to the video'
+            'Скопируйте URL ссылку на видео' :
+            'Copy the URL link to the video'
 
     public static readonly PasteTheCopiedLinkIntoTheInputField = (lang: Language) =>
         lang === Language.RUSSIAN ?
-            '2. Вставьте скопированную ссылку в поле для ввода' :
-            '2. Paste the copied link into the input field'
+            'Вставьте скопированную ссылку в поле для ввода' :
+            'Paste the copied link into the input field'
 
     public static readonly ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting = (lang: Language) =>
         lang === Language.RUSSIAN ?
-            '3. Нажмите на "Скачать" и дождитесь, пока видео обработается и скачается' :
-            '3. Click on "Download" and wait for the video to be processed and finished converting'
+            'Нажмите на "Скачать" и дождитесь, пока видео обработается и скачается' :
+            'Click on "Download" and wait for the video to be processed and finished converting'
 
     public static readonly EnjoyTheResultingTrack = (lang: Language) =>
         lang === Language.RUSSIAN ?
-            '4. Наслаждайтесь получившимся треком!' :
-            '4. Enjoy the resulting track!'
+            'Наслаждайтесь получившимся треком!' :
+            'Enjoy the resulting track!'
 
     public static readonly SupportedSites = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Поддерживаемые сайты' : 'Supported Sites'
@@ -77,6 +77,27 @@ export class Localisation {
     public static readonly SignIn = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Войти' : 'Sign In'
 
+    public static readonly SignUp = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Зарегистрироваться' : 'Sign Up'
+
     public static readonly SignOut = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Выйти' : 'Sign Out'
+
+    public static readonly SignInToVTM = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Войти в VTM' : 'Sign in to VTM'
+
+    public static readonly Email = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Электронная почта' : 'Email'
+
+    public static readonly YourEmail = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Ваша электронная почта' : 'Your email'
+
+    public static readonly Password = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Пароль' : 'Password'
+
+    public static readonly YourPassword = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Ваш пароль' : 'Your password'
+
+    public static readonly ForgetPassword = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Забыли пароль?' : 'Forget password?'
 }

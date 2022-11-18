@@ -1,9 +1,11 @@
-import React, {ReactElement} from "react";
+import React from "react";
 
 import '../styles/common/about_app_screen/AboutApp.css'
 import '../styles/audiowide/about_app_screen/AboutApp.css'
 import '../styles/serif/about_app_screen/AboutApp.css'
+
 import '../styles/audiowide/Text.css'
+import '../styles/serif/Text.css'
 
 import {useLang} from "../utils/lang/LangProvider";
 import {Language, Localisation} from "../utils/lang/Localisation";
@@ -17,12 +19,16 @@ export default function AboutAppScreen() {
 
     return (
         <AnimatedDiv className='about-app'>
-            <div className={aboutAppData}>{Localisation.AboutApp(lang)}</div>
-            {[
-                'TODO: About App data'
-            ].map((text, ind): ReactElement =>
-                ind === 0 ? (<p className={textClass}>{text}</p>) : (<><p className={textClass}>{text}</p><p></p></>)
-            )}
+            <h1 className={aboutAppData}>{Localisation.AboutApp(lang)}</h1>
+            <ul style={{listStyleType: 'none'}}>
+                {[
+                    'TODO: About App data'
+                ].map((text, ind) =>
+                    ind === 0 ?
+                        <li key={ind} className={textClass}>{text}</li> :
+                        <><li key={ind} className={textClass}>{text}</li><></></>
+                )}
+            </ul>
         </AnimatedDiv>
     )
 }

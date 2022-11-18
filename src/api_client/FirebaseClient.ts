@@ -36,7 +36,7 @@ export function signUp(email: string, password: string, setUser: (user: User | n
         .catch(alert)
 }
 
-export function singIn(email: string, password: string, setUser: (user: User | null) => void) {
+export function signIn(email: string, password: string, setUser: (user: User | null) => void) {
     signInWithEmailAndPassword(auth, email, password)
         .then(
             async credentials => new User(

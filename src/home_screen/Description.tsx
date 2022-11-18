@@ -3,6 +3,7 @@ import React from "react";
 import '../styles/common/home_screen/Description.css'
 import '../styles/audiowide/home_screen/Description.css'
 import '../styles/serif/home_screen/Description.css'
+
 import '../styles/audiowide/Text.css'
 import '../styles/serif/Text.css'
 
@@ -22,13 +23,15 @@ export default function Description() {
     return (
         <AnimatedDiv className='description'>
             <DescriptionHeader/>
-            {[
-                Localisation.CopyTheUrlLinkToTheVideo(lang),
-                Localisation.PasteTheCopiedLinkIntoTheInputField(lang),
-                Localisation.ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting(lang),
-                Localisation.EnjoyTheResultingTrack(lang)
-            ].map((text, ind) => <p className={textClass}>{text}</p>)
-            }
+            <ol style={{marginLeft: '20px'}}>
+                {[
+                    Localisation.CopyTheUrlLinkToTheVideo(lang),
+                    Localisation.PasteTheCopiedLinkIntoTheInputField(lang),
+                    Localisation.ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting(lang),
+                    Localisation.EnjoyTheResultingTrack(lang)
+                ].map((text, ind) => <li key={ind} className={textClass}>{text}</li>)
+                }
+            </ol>
             <SupportedSites/>
         </AnimatedDiv>
     )

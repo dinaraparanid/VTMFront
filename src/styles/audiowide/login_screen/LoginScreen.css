@@ -1,7 +1,7 @@
-.faq .faq-data-serif {
+.login .login-header-audiowide {
     background-color: #330063;
-    font-family: serif;
-    font-size: 30px;
+    font-family: 'Audiowide', serif;
+    font-size: 26px;
     font-style: italic;
     font-weight: bold;
     text-shadow: 1px 1px 5px #ffab00;
@@ -16,4 +16,16 @@
     padding-bottom: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-bottom-style: wave;
+}
+
+.login .forget-password-audiowide {
+    font-family: 'Audiowide', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #2de2e6;
+    text-shadow: 0 1px 4px #E72696;
+    letter-spacing: 1px;
+    text-align: end;
+    margin-right: 15px;
 }
