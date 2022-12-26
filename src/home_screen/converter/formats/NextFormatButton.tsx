@@ -6,10 +6,10 @@ import {OutputFormat} from "../../../utils/output_format/OutputFormat";
 import {useOutputFormat} from "../../../utils/output_format/OutputFormatProvider";
 
 export default function NextFormatButton({format}: { format: OutputFormat }) {
-    const { setOutputFormat } = useOutputFormat()
+    const { outputFormat, setOutputFormat } = useOutputFormat()
 
     return <button
-        className='format'
+        className={outputFormat === format ? 'selected-format' : 'unselected-format'}
         onClick={() => setOutputFormat(format) }
     >{format}</button>
 }

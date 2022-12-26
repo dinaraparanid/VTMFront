@@ -12,14 +12,33 @@ export function getVideoData(url: string) {
     return axios.get<VideoInfo>(`${API_URL}/get_video?url=${url}`)
 }
 
-export function downloadFile(videoUrl: string, fileName: string, extension: string, authToken: string | null = null) {
+export function downloadFile(
+    videoUrl: string,
+    fileName: string,
+    extension: string,
+    title: string | null = null,
+    artist: string | null = null,
+    album: string | null = null,
+    numberInAlbum: number | null = null,
+    coverUrl: string | null = null,
+    authToken: string | null = null
+) {
     if (videoUrl === '') {
         alert('URL is empty')
         return null;
     }
 
-    const fileUrl = `${API_URL}/convert_video?url=${videoUrl}&ext=${extension}`
-    const headers = authToken ? { headers: { Authorization: `Bearer ${authToken}` } } : {}
+    const {request, params, headers} = authToken ? {
+        request: 'convert_video_auth',
+        params: `&title=${title}&artist=${artist}&album=${album}&numberInAlbum=${numberInAlbum}&coverUrl=${coverUrl}`,
+        headers: { headers: { Authorization: `Bearer ${authToken}` } }
+    } : {
+        request: 'convert_video',
+        params: '',
+        headers: {}
+    }
+
+    const fileUrl = `${API_URL}/${request}?url=${videoUrl}&ext=${extension}${params}`
 
     return axios({
         url: fileUrl,

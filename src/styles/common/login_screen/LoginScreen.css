@@ -52,8 +52,9 @@
     background-color: #3d002b;
 }
 
-form {
+.sign-buttons {
     display: flex;
     justify-content: center;
     flex-direction: column;
+
 }

@@ -24,7 +24,7 @@ export function setAuthLang(lang: Language) {
 }
 
 export function signUp(email: string, password: string, setUser: (user: User | null) => void) {
-    createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password)
         .then(async credentials => new User(
             credentials.user.uid,
             email,
@@ -37,7 +37,7 @@ export function signUp(email: string, password: string, setUser: (user: User | n
 }
 
 export function signIn(email: string, password: string, setUser: (user: User | null) => void) {
-    signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password)
         .then(
             async credentials => new User(
                 credentials.user.uid,
@@ -48,17 +48,21 @@ export function signIn(email: string, password: string, setUser: (user: User | n
             )
         )
         .then(setUser)
-        .catch(alert)
+        .then(() => true)
+        .catch(e => {
+            alert(e)
+            return false
+        })
 }
 
 export function signOut(setUser: (user: User | null) => void) {
-    firebaseSignOut(auth)
+    return firebaseSignOut(auth)
         .then(() => setUser(null))
         .catch(alert)
 }
 
 export function signInWithGoogle(setUser: (user: User | null) => void) {
-    signInWithPopup(auth, googleProvider)
+    return signInWithPopup(auth, googleProvider)
         .then(
             async credentials => new User(
                 credentials.user.uid,
@@ -73,11 +77,11 @@ export function signInWithGoogle(setUser: (user: User | null) => void) {
 }
 
 export function sendForgetPasswordEmail(email: string) {
-    sendPasswordResetEmail(auth, email).catch(alert)
+    return sendPasswordResetEmail(auth, email).catch(alert)
 }
 
 export function verifyPasswordResetCode(code: string, password: string) {
-    firebaseVPRC(auth, code)
+    return firebaseVPRC(auth, code)
         .then(() => confirmPasswordReset(auth, code, password))
         .catch(alert)
 }

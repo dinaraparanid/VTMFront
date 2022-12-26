@@ -97,7 +97,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.converter .formats .mp3-format {
+.converter .formats .mp3-unselected-format {
     background-color: inherit;
     font-family: 'Audiowide', serif;
     font-size: 18px;
@@ -111,7 +111,21 @@
     border-bottom-left-radius: 10px;
 }
 
-.converter .formats .format {
+.converter .formats .mp3-selected-format {
+    background-color: #460063;
+    font-family: 'Audiowide', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #f9c80e;
+    text-shadow: 0 1px 4px #ffab00;
+    letter-spacing: 1px;
+    height: 100%;
+    border: 0;
+    width: 100px;
+    border-bottom-left-radius: 10px;
+}
+
+.converter .formats .unselected-format {
     background-color: inherit;
     font-family: 'Audiowide', serif;
     font-size: 18px;
@@ -125,10 +139,32 @@
     margin-left: 10px;
 }
 
-.converter .formats .format:hover {
+.converter .formats .selected-format {
+    background-color: #460063;
+    font-family: 'Audiowide', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #f9c80e;
+    text-shadow: 0 1px 4px #ffab00;
+    letter-spacing: 1px;
+    height: 100%;
+    border: 0;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.converter .formats .selected-format:hover {
     background-color: #630047;
 }
 
-.converter .formats .mp3-format:hover {
+.converter .formats .unselected-format:hover {
+    background-color: #630047;
+}
+
+.converter .formats .mp3-selected-format:hover {
+    background-color: #630047;
+}
+
+.converter .formats .mp3-unselected-format:hover {
     background-color: #630047;
 }

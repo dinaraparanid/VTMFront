@@ -11,7 +11,7 @@ import {useLang} from "../utils/lang/LangProvider";
 import AnimatedDiv from "../utils/animated/AnimatedDiv";
 import {Language, Localisation} from "../utils/lang/Localisation";
 import TextEditor from "./TextEditor";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {signIn} from '../api_client/FirebaseClient'
 import {useUser} from "../utils/user_provider/UserProvider";
 
@@ -20,6 +20,7 @@ export default function LoginScreen() {
     const { setUser } = useUser()
     const emailRef = useRef('')
     const passwordRef = useRef('')
+    const navigate = useNavigate()
 
     const loginHeader = lang === Language.RUSSIAN ? 'login-header-serif' : 'login-header-audiowide'
     const forgetPasswordClass = lang === Language.RUSSIAN ? 'forget-password-serif' : 'forget-password-audiowide'
@@ -44,14 +45,17 @@ export default function LoginScreen() {
                 className={forgetPasswordClass}
             >{Localisation.ForgetPassword(lang)}</NavLink>
         </p>
-        <form style={{alignItems: 'center'}}>
+        <div className='sign-buttons'>
             <button
                 className='button'
-                onClick={() => signIn(emailRef.current, passwordRef.current, setUser)}
+                onClick={() => {
+                    signIn(emailRef.current, passwordRef.current, setUser)
+                        .then((u) => { if (u) navigate("/", { replace: true }) })
+                }}
             >{Localisation.SignIn(lang)}</button>
-            <NavLink to='sign_up'>
+            <NavLink style={{alignSelf: 'center'}} to='sign_up'>
                 <button className='button'>{Localisation.SignUp(lang)}</button>
             </NavLink>
-        </form>
+        </div>
     </AnimatedDiv>
 }

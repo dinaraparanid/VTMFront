@@ -100,4 +100,12 @@ export class Localisation {
 
     public static readonly ForgetPassword = (lang: Language) =>
         lang === Language.RUSSIAN ? 'Забыли пароль?' : 'Forget password?'
+
+    public static readonly NotFound = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'Не найдено :(' : 'Not Found :('
+
+    public static readonly TODO = 'TODO'
+
+    public static readonly WordInProgress = (lang: Language) =>
+        lang === Language.RUSSIAN ? 'В процессе...' : 'Work in progress...'
 }

@@ -1,0 +1,12 @@
+.not-found {
+    background-color: #2f002e;
+    margin-top: 300px;
+    align-self: center;
+    width: 600px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px #E72696;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
