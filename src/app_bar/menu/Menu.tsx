@@ -12,7 +12,6 @@ export default function Menu() {
             <FAQ/>
             <LangMenu/>
             <AboutApp/>
-            <UserMenu/>
         </nav>
     )
 }

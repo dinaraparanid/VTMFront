@@ -13,12 +13,11 @@ import AnimatedDiv from "../utils/animated/AnimatedDiv";
 
 export default function Description() {
     const { lang } = useLang()
-    const [howToUseIt, textClass, supportedSites] = lang === Language.RUSSIAN ?
-        ['how-to-use-it-serif', 'text-serif', 'supported-sites-serif'] :
-        ['how-to-use-it-audiowide', 'text-audiowide', 'supported-sites-audiowide']
+    const [howToUseIt, textClass] = lang === Language.RUSSIAN ?
+        ['how-to-use-it-serif', 'text-serif'] :
+        ['how-to-use-it-audiowide', 'text-audiowide']
 
     const DescriptionHeader = () => <div className={howToUseIt}>{Localisation.HowToUseIt(lang)}</div>
-    const SupportedSites = () => <a href='https://ytdl-org.github.io/youtube-dl/supportedsites.html' className={supportedSites}><p>{Localisation.SupportedSites(lang)}</p></a>
 
     return (
         <AnimatedDiv className='description'>
@@ -32,7 +31,6 @@ export default function Description() {
                 ].map((text, ind) => <li key={ind} className={textClass}>{text}</li>)
                 }
             </ol>
-            <SupportedSites/>
         </AnimatedDiv>
     )
 }

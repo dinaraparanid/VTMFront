@@ -1,111 +1,101 @@
+import ru from '../../lang/ru.json'
+import en from '../../lang/en.json'
+
 export enum Language { RUSSIAN, ENGLISH }
 
 export class Localisation {
     public static toLanguage(index: number): Language {
         switch (index) {
-            case 0:
-                return Language.RUSSIAN
-            case 1:
-                return Language.ENGLISH
-            default:
-                throw Error(`Unknown language index: ${index}`)
+            case 0: return Language.RUSSIAN
+            case 1: return Language.ENGLISH
+            default: throw Error(`Unknown language index: ${index}`)
         }
     }
 
+    private static readonly langJson = (lang: Language) =>
+        lang === Language.RUSSIAN ? ru : en
+
     public static readonly HowToUseIt = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Как Пользоваться?' : 'How To Use It'
+        Localisation.langJson(lang)["HowToUseIt"]
 
     public static readonly CopyTheUrlLinkToTheVideo = (lang: Language) =>
-        lang === Language.RUSSIAN ?
-            'Скопируйте URL ссылку на видео' :
-            'Copy the URL link to the video'
+        Localisation.langJson(lang)["CopyTheUrlLinkToTheVideo"]
 
     public static readonly PasteTheCopiedLinkIntoTheInputField = (lang: Language) =>
-        lang === Language.RUSSIAN ?
-            'Вставьте скопированную ссылку в поле для ввода' :
-            'Paste the copied link into the input field'
+        Localisation.langJson(lang)["PasteTheCopiedLinkIntoTheInputField"]
 
     public static readonly ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting = (lang: Language) =>
-        lang === Language.RUSSIAN ?
-            'Нажмите на "Скачать" и дождитесь, пока видео обработается и скачается' :
-            'Click on "Download" and wait for the video to be processed and finished converting'
+        Localisation.langJson(lang)["ClickOnDownloadAndWaitForTheVideoToBeProcessedAndFinishedConverting"]
 
     public static readonly EnjoyTheResultingTrack = (lang: Language) =>
-        lang === Language.RUSSIAN ?
-            'Наслаждайтесь получившимся треком!' :
-            'Enjoy the resulting track!'
-
-    public static readonly SupportedSites = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Поддерживаемые сайты' : 'Supported Sites'
+        Localisation.langJson(lang)["EnjoyTheResultingTrack"]
 
     public static readonly PasteUrlLinkHere = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Вставьте URL ссылку сюда' : 'Paste URL link here'
+        Localisation.langJson(lang)["PasteUrlLinkHere"]
 
     public static readonly YourUrlLinkVideo = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Ваша URL ссылка' : 'Your URL link'
+        Localisation.langJson(lang)["YourUrlLinkVideo"]
 
     public static readonly Download = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Скачать' : 'Download'
+        Localisation.langJson(lang)["Download"]
 
     public static readonly Home = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Домой' : 'Home'
+        Localisation.langJson(lang)["Home"]
 
     public static readonly FAQ = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'ЧаВо' : 'FAQ'
+        Localisation.langJson(lang)["FAQ"]
 
     public static readonly Language = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Язык' : 'Language'
+        Localisation.langJson(lang)["Language"]
 
     public static readonly AboutApp = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'О Приложении' : 'About App'
+        Localisation.langJson(lang)["AboutApp"]
 
     public static readonly Start = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Старт' : 'Start'
+        Localisation.langJson(lang)["Start"]
 
     public static readonly Next = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Далее' : 'Next'
+        Localisation.langJson(lang)["Next"]
 
     public static readonly Cover = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Обложка' : 'Cover'
+        Localisation.langJson(lang)["Cover"]
 
     public static readonly Duration = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Продолжительность' : 'Duration'
+        Localisation.langJson(lang)["Duration"]
 
     public static readonly ReadyToConvert = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Готово к Конвертации' : 'Ready to Convert'
+        Localisation.langJson(lang)["ReadyToConvert"]
 
     public static readonly SignIn = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Войти' : 'Sign In'
+        Localisation.langJson(lang)["SignIn"]
 
     public static readonly SignUp = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Зарегистрироваться' : 'Sign Up'
+        Localisation.langJson(lang)["SignUp"]
 
     public static readonly SignOut = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Выйти' : 'Sign Out'
+        Localisation.langJson(lang)["SignOut"]
 
     public static readonly SignInToVTM = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Войти в VTM' : 'Sign in to VTM'
+        Localisation.langJson(lang)["SignInToVTM"]
 
     public static readonly Email = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Электронная почта' : 'Email'
+        Localisation.langJson(lang)["Email"]
 
     public static readonly YourEmail = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Ваша электронная почта' : 'Your email'
+        Localisation.langJson(lang)["YourEmail"]
 
     public static readonly Password = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Пароль' : 'Password'
+        Localisation.langJson(lang)["Password"]
 
     public static readonly YourPassword = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Ваш пароль' : 'Your password'
+        Localisation.langJson(lang)["YourPassword"]
 
     public static readonly ForgetPassword = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Забыли пароль?' : 'Forget password?'
+        Localisation.langJson(lang)["ForgetPassword"]
 
     public static readonly NotFound = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'Не найдено :(' : 'Not Found :('
+        Localisation.langJson(lang)["NotFound"]
 
-    public static readonly TODO = 'TODO'
-
-    public static readonly WordInProgress = (lang: Language) =>
-        lang === Language.RUSSIAN ? 'В процессе...' : 'Work in progress...'
+    public static readonly WorkInProgress = (lang: Language) =>
+        Localisation.langJson(lang)["WorkInProgress"]
 }

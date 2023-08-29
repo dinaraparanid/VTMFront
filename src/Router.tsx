@@ -11,7 +11,7 @@ const SignUpScreen = lazy(() => import("./sign_up_screen/SignUpScreen"))
 const MessageScreen = lazy(() => import("./message_screen/MessageScreen"))
 
 const NotFoundScreen = () => <MessageScreen getMessage={Localisation.NotFound}/>
-const TODOScreen = () => <MessageScreen getMessage={Localisation.WordInProgress}/>
+const TODOScreen = () => <MessageScreen getMessage={Localisation.WorkInProgress}/>
 
 export default function Router() {
     const location = useLocation()
