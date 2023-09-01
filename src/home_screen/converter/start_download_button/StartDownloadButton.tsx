@@ -20,7 +20,7 @@ export default function StartDownloadButton({urlRef, outputFormat, lang}: StartD
             if (videoInfo !== null)
                 downloadFile(
                     urlRef.current,
-                    videoInfo._filename,
+                    videoInfo.title,
                     outputFormat.toLowerCase(),
                     user?.token
                 )?.catch(alert)

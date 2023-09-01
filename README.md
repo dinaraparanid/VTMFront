@@ -10,7 +10,7 @@ a desired audio format with a single URL paste
 
 ### **Preview**
 
-TODO
+![preview](preview.gif)
 
 ## **Stack**
 
@@ -28,6 +28,10 @@ TODO
 1. YouTube video fetching and downloading
 2. Multiple audio formats: MP3, WAV, AAC, FLAC, M4A, OPUS, VORBIS
 3. Language switch support: Russian and English
+
+### **TODO**
+1. Complete authorization
+2. Tags setup
 
 ## **License**
 *GNU Public License V 3.0*
